@@ -1,0 +1,9 @@
+@import "../../assets/styles/config.scss";
+
+img {
+    height: $frontpage_img_height;
+    width: $frontpage_img_width;
+    border: $frontpage_img_border;
+}
+
+/* Miten kuvan alta marginaali pois? */

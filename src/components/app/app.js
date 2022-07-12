@@ -1,13 +1,20 @@
 import styles from './app.module.scss';
 import Items from "../items";
+import Image from "../frontpage_img";
+import Header from "../header";
+import Content from "../content";
+import Menu from "../menu";
+
 
 function App() {
   return (
     <div className={styles.app}>
-      <h1>
-      Liikuntapäiväkirja
-      </h1>
-      <Items />
+      <Header />
+      <Image />
+      <Content>
+        <Items />
+        </Content>  
+      <Menu />
     </div>
   )
   }

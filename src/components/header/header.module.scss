@@ -1,0 +1,20 @@
+@import "../../assets/styles/config.scss";
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@600&family=Nunito:wght@400;600&family=Poppins:wght@100;200&display=swap');
+
+.header {
+    background: $header-background;
+    color: $header-text;
+    max-height: $header-height;
+    min-height: $header-height;
+    font-size: $header-font-size;
+    font-family: 'Gantari', sans-serif;
+    text-transform: uppercase;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+/* Miten otsake koko sivun levyiseksi tai tuon valokuvan? */

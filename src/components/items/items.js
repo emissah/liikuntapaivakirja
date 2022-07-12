@@ -1,8 +1,9 @@
 import Item from "../item";
+import styles from './items.module.scss';
 
 function Items(props) {
     return(
-   <div>
+   <div className={styles.items}>
        <Item />
        <Item />
        <Item />
