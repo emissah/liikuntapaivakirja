@@ -1,5 +1,6 @@
 import Item from "../item";
 import styles from './items.module.scss';
+import Button from "../../shared/uibuttons";
 
 function Items(props) {
     return(
@@ -10,6 +11,7 @@ function Items(props) {
        <Item />
        <Item />
        <Item />
+       <Button>LISÄÄ UUSI RIVI</Button>
    </div>
     );
 }

@@ -1,0 +1,21 @@
+.uibutton {
+    background-color: #cccccc;
+    color: #000000;
+    border: none;
+    outline: none;
+    padding: 0.7em 2em;
+    margin: 0.5em;
+    border-radius: 0.2em;
+    box-shadow: rgba(0,0,0, 0.5) 0px 2px 2px;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.uibutton:active {
+    box-shadow: rgba(0,0,0, 0.5) 0px 2px 5px;
+    background-color: #aaaaaa;
+}
+
+.uibutton:hover {
+    opacity: 1;
+}
