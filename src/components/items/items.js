@@ -11,7 +11,7 @@ function Items(props) {
        <Item />
        <Item />
        <Item />
-       <Button>LISÄÄ UUSI RIVI</Button>
+       <Button >LISÄÄ UUSI RIVI</Button>
    </div>
     );
 }
