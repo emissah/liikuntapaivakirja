@@ -3,11 +3,12 @@ import styles from './app.module.scss';
 import Items from "../../routes/items";
 import Stats from '../../routes/stats/';
 import Settings from '../../routes/settings/';
-import Image from "../frontpage_img";
+//import Image from "../frontpage_img";
 import Header from "../header";
 import Content from "../content";
 import Menu from "../menu";
 import { ButtonAppContainer } from '../../shared/uibuttons';
+import testdata from "../../testdata.js";
 
 
 function App() {
@@ -16,10 +17,9 @@ function App() {
     <div className={styles.app}>
     <Router>
       <Header />
-      <Image />
       <Content>
         <Route exact path="/">
-        <Items />
+        <Items data={testdata}/>
         </Route>
         <Route path="/stats"><Stats/>
         </Route>

@@ -10,15 +10,15 @@
 .item_data {
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto auto auto;
     padding: $item-padding;
 }
 
-.item_amount, .item_timespan, .item_average {
+.item_kilometres, .item_minutes {
   text-align: right;
 }
 
-.item_type, .item_amount {
+.item_type, .item_date {
     font-weight: bold;
     color: $item-text-strong;
 }
