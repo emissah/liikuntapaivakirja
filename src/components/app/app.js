@@ -3,13 +3,13 @@ import styles from './app.module.scss';
 import Items from "../../routes/items";
 import Stats from '../../routes/stats/';
 import Settings from '../../routes/settings/';
+import AddItem from "../../routes/additem";
 //import Image from "../frontpage_img";
 import Header from "../header";
 import Content from "../content";
 import Menu from "../menu";
 import { ButtonAppContainer } from '../../shared/uibuttons';
 import testdata from "../../testdata.js";
-
 
 function App() {
   return (
@@ -24,6 +24,9 @@ function App() {
         <Route path="/stats"><Stats/>
         </Route>
         <Route path="/settings"><Settings/>
+        </Route>
+        <Route path="/add">
+        <AddItem/>
         </Route>
         </Content>  
       <Menu />

@@ -8,13 +8,13 @@
 }
 
 .item_data {
-    flex: 1;
+    flex:auto;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     padding: $item-padding;
 }
 
-.item_kilometres, .item_minutes {
+.item_kilometres, .item_minutes, .item_hours {
   text-align: right;
 }
 

@@ -32,6 +32,7 @@ function Item(props) {
         <div className={styles.item_type}>{props.data.type}</div>
         <div className={styles.item_date}>{date}</div>
         <div className={styles.item_kilometres}>{props.data.kilometres} km</div>
+        <div className={styles.item_hours}>{props.data.hours} h</div>
         <div className={styles.item_minutes}>{props.data.minutes} min</div>
         
     </div>

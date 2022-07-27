@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Item from "../../components/item";
 import Image from "../../components/frontpage_img/frontpage_img";
 import styles from './items.module.scss';
@@ -10,7 +11,7 @@ function Items(props) {
    <div className={styles.items}>
        <Image />
        {items} 
-       <FloatingButton primary>+</FloatingButton>
+       <Link to="/add"><FloatingButton primary>+</FloatingButton></Link>
    </div>
    </ButtonContainer>
     );
