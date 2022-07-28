@@ -1,6 +1,6 @@
-import  { useState} from "react-router-dom";
-import useform from ".";
-const useForms = (callback, initialState={}, resetOnSubmit=true) => {
+import  { useState} from "react";
+
+const useForm = (callback, initialState={}, resetOnSubmit=true) => {
 
     // esitellään useState hook johon käyttäjän lomakkeelle 
     // syöttämä tieto tallennetaan
@@ -28,7 +28,7 @@ const useForms = (callback, initialState={}, resetOnSubmit=true) => {
     setValues(values => ({...values, [event.target.name]: value}));
    }
     // Funktio joka palauttaa lomakkeen tiedot alkutilanteeseen
-     const resetValues = () {
+     const resetValues = () => {
         setValues(initialState);
      }  
 
@@ -44,4 +44,4 @@ const useForms = (callback, initialState={}, resetOnSubmit=true) => {
 }
   
 
-export default useForms;
+export default useForm;
