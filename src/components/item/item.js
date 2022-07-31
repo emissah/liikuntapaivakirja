@@ -1,6 +1,7 @@
 import styles from "./item.module.scss";
 import { MdNavigateNext} from "react-icons/md";
-import { type } from "@testing-library/user-event/dist/type";
+import {Link} from "react-router-dom"
+//import { type } from "@testing-library/user-event/dist/type";
 
 function Item(props) {
     //<div className={styles.item_timespan}>{period}</div>
@@ -37,7 +38,7 @@ function Item(props) {
         
     </div>
     <div className={styles.item_edit}>
-        <MdNavigateNext/>
+    <Link to={"edit/" + props.data.id}><MdNavigateNext/></Link>
     </div>
     </div> 
     );

@@ -2,31 +2,44 @@ import styles from './itemform.module.scss';
 import useForm from '../../shared/useform/useform';
 import Button from "../../shared/uibuttons";
 import {useHistory} from "react-router-dom";
+import {v4 as uuidv4} from "uuid";
+// Miksi Kävely-vaihtoehto ei näy? Tai siis eka alkio typelist-taulukosta. Vasta sitten kun muutan sen, se näkyy.
 
 function ItemForm(props) {
 
   const history = useHistory();
 
   const submit = () => {
-    alert("SUBMIT");
+    let storedvalues = Object.assign({}, values);
+    storedvalues.kilometres = parseFloat(storedvalues.kilometres);
+    storedvalues.hours = parseFloat(storedvalues.hours);
+    storedvalues.minutes = parseFloat(storedvalues.minutes);
+    storedvalues.id = storedvalues.id ? storedvalues.id : uuidv4();
+    props.onItemSubmit(storedvalues);
     history.push("/");
   } 
 
 
-    const initialState = {
+    const initialState = props.data ? props.data :  {
       type: "",
       kilometres: 0,
       hours: 0,
       minutes: 0,
       date: ""
     };
-
+    
     const {values, handleChange, handleSubmit} = useForm(submit, initialState, false);
 
 
     const handleCancel = (event) => {
       event.preventDefault();
       history.goBack();
+    }
+
+    const handleDelete = (event) => {
+      event.preventDefault();
+      props.onItemDelete(values.id);
+      history.push("/");
     }
 
     return(
@@ -37,11 +50,7 @@ function ItemForm(props) {
            <div>
             <label htmlFor="type">Liikuntalaji:</label>
             <select name="type" onChange={handleChange} value={values.type}>
-            <option>Kävely</option>
-             <option>Juoksu</option>
-             <option>Tanssi</option>
-             <option>Pyöräily</option>
-             
+            {props.types.map((type) => <option key={type} value={type}>{type}</option> )} 
             </select>
            </div>
            </div>
@@ -64,17 +73,25 @@ function ItemForm(props) {
             <input type="number" name="minutes" onChange={handleChange} value={values.minutes} />
             </div>
            </div>
+           
         <div className={styles.form_row}>
         <div>
          <Button onClick={handleCancel}>PERUUTA</Button>
           </div>
           <div>
-         <Button primary type="submit">LISÄÄ</Button>
+         <Button primary type="submit">{ props.data ? "TALLENNA" : "LISÄÄ" }</Button>
           </div>
         </div>
+
+        { props.onItemDelete ? 
+        <div className={styles.form_row}>
+        <div>
+         <Button onClick={handleDelete}>POISTA</Button>
+          </div>
+          </div>
+        : "" }
         </div>
         </form>
-
       </div>  
     );
 }
