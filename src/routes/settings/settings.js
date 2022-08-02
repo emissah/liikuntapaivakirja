@@ -10,8 +10,8 @@ function Settings(props) {
     }
     return(
     <div className={styles.settings}>
-        <h1>Settings</h1>
-        <h2>Kulutyypit</h2>
+        <h2>Settings</h2>
+        <h3>Kulutyypit</h3>
         <div className={styles.settings_types}>
         {props.types.map((type) => <div key={type}>{type}</div> )}
         <form onSubmit={handleTypeSubmit}>
