@@ -1,7 +1,8 @@
 import {useState, useEffect} from "react";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { useFirestore, useFirestoreCollectionData } from "reactfire";
+import { useFirestore, useFirestoreCollectionData, useUser } from "reactfire";
 import "firebase/firestore";
+import "firebase/auth";
 import styles from './app.module.scss';
 import Items from "../../routes/items";
 import Stats from '../../routes/stats/';
@@ -21,10 +22,14 @@ function App() {
   const [data, setData] = useState([]);
   const [typelist, setTypelist ] = useState([]);
 
-  const itemCollectionRef = useFirestore().collection("item");
+  const user = useUser();
+
+  
+
+  const itemCollectionRef = useFirestore().collection("user").doc(user.data.uid).collection("item");
   const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("date", "desc"), {initialData: [], idField: "id"});
   
-  const typeCollectionRef = useFirestore().collection("type");
+  const typeCollectionRef = useFirestore().collection("user").doc(user.data.uid).collection("type");
   const { data: typeCollection} = useFirestoreCollectionData(typeCollectionRef.orderBy("type"), {initialData: []});
 
   //useEffect(() => {

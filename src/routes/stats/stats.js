@@ -23,7 +23,7 @@ function Stats(props) {
 
     return(
     <div className={styles.stats}>
-        <h2>Stats</h2>
+        <h2>Tilastointi</h2>
         <h3>Liikkumiseen käytetyt kilometrit</h3>
         <ResponsiveContainer width={"100%"} height={360}>
         <LineChart data={linedata} margin={ {top: 20, left: 20, right: 20, bottom: 10 }} >

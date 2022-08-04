@@ -1,0 +1,28 @@
+
+.startup {
+    max-width: 38rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 20px;
+    color: #00234e;
+    
+}
+
+.startup h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;     
+}
+.startup img {
+    height: 30rem;
+    width: 30rem;
+    margin: 10rem auto 2rem auto;
+    border-radius: 50%;
+}
+
+.startup div {
+    margin: 1rem;
+}
