@@ -1,9 +1,11 @@
 import styles from './footer.module.scss';
+// Miten tuon saisi näkyviin paremmin, nyt se pitää scrollata esiin
 
 function Footer(props) {
 return (
   <div className={styles.footer}>
-   <p>Kuva Uplash-sivustolta</p> 
+    Kuva: <a href="https://unsplash.com/">Unsplash</a>
+   
   </div>
 )};
 
