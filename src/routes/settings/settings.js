@@ -1,14 +1,18 @@
 import styles from "./settings.module.scss";
 import Button from"../../shared/uibuttons";
 import { useUser, useAuth} from "reactfire";
+//import { useHistory } from "react-router-dom";
 
 function Settings(props) {
 
     const user = useUser();
     const auth = useAuth();
+    //const history = useHistory();
 
     const signOut = async () => {
         await auth.signOut();
+        //history.push('.'); 
+        //window.location.reload();
     }
 
 
@@ -39,13 +43,13 @@ function Settings(props) {
         
         </div>
 
-        <h3>Kulutyypit</h3>
+        <h3>Liikuntalajit</h3>
         <div className={styles.settings_types}>
         {props.types.map((type) => <div key={type}>{type}</div> )}
         <form onSubmit={handleTypeSubmit}>
           <div className={styles.typeform}>
             <input type="text" name="type" />
-            <Button className={styles.settings_button} type="submit" primary>Lisää kulutyyppi</Button>
+            <Button className={styles.settings_button} type="submit" primary>Lisää liikuntalaji</Button>
             </div>  
         </form>
         </div>

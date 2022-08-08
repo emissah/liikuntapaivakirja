@@ -3,7 +3,6 @@ import useForm from '../../shared/useform/useform';
 import Button from "../../shared/uibuttons";
 import {useHistory} from "react-router-dom";
 import {v4 as uuidv4} from "uuid";
-// Miksi Kävely-vaihtoehto ei näy? Tai siis eka alkio typelist-taulukosta. Vasta sitten kun muutan sen, se näkyy.
 
 function ItemForm(props) {
 
@@ -21,11 +20,11 @@ function ItemForm(props) {
 
 
     const initialState = props.data ? props.data :  {
-      type: "",
+      type: props.types ? props.types[0] : "",
       kilometres: 0,
       hours: 0,
       minutes: 0,
-      date: ""
+      date: new Date().toISOString().substring(0,10)
     };
     
     const {values, handleChange, handleSubmit} = useForm(submit, initialState, false);
@@ -49,7 +48,7 @@ function ItemForm(props) {
            <div className={styles.form_row}>
            <div>
             <label htmlFor="type">Liikuntalaji:</label>
-            <select name="type" onChange={handleChange} value={values.type}>
+            <select name="type" onChange={handleChange} value={values.type} required >
             {props.types.map((type) => <option key={type} value={type}>{type}</option> )} 
             </select>
            </div>
@@ -58,19 +57,19 @@ function ItemForm(props) {
            <div className={styles.form_row}>
            <div>
             <label htmlFor="date">Päivämäärä:</label>
-            <input type="date" name="date" onChange={handleChange} value={values.date}/>   
+            <input type="date" name="date" onChange={handleChange} value={values.date} required/>   
            </div>
            <div>
             <label htmlFor="kilometres">Kilometrit:</label>
-            <input type="number" name="kilometres" onChange={handleChange} value={values.kilometres} />   
+            <input type="number" name="kilometres" onChange={handleChange} value={values.kilometres} required />   
            </div>
            <div>
             <label htmlFor="hours">Tunnit:</label>
-            <input type="number" name="hours" onChange={handleChange} value={values.hours} />
+            <input type="number" name="hours" onChange={handleChange} value={values.hours} required />
             </div>
             <div>
             <label htmlFor="minutes">Minuutit:</label>
-            <input type="number" name="minutes" onChange={handleChange} value={values.minutes} />
+            <input type="number" name="minutes" onChange={handleChange} value={values.minutes} required />
             </div>
            </div>
            

@@ -4,7 +4,7 @@ import styles from './footer.module.scss';
 function Footer(props) {
 return (
   <div className={styles.footer}>
-    Kuva: <a href="https://unsplash.com/">Unsplash</a>
+    Kuvat: <a href="https://unsplash.com/">Unsplash</a>
    
   </div>
 )};

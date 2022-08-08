@@ -15,7 +15,7 @@ import Content from "../content";
 import Menu from "../menu";
 import Footer from "../footer";
 import { ButtonAppContainer } from '../../shared/uibuttons';
-import testdata from "../../testdata.js";
+// import testdata from "../../testdata.js";    EI KÄYTÖSSÄ
 
 function App() {
 

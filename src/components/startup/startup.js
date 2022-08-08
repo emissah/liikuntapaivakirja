@@ -3,6 +3,7 @@ import { Button } from "../../shared/uibuttons";
 import firebase from "firebase/app";
 import { useAuth } from "reactfire"; 
 import img from "../../assets/images/startup-img.jpg";
+import Footer from "../footer/footer";
 
 function Startup(props) {
 
@@ -23,7 +24,11 @@ function Startup(props) {
         <div>Tervetuloa käyttämään liikuntapäiväkirjaa, johon voit kirjata omat liikuntasuoritteesi.
         Sinun tulee kirjautua sisään Google-tunnuksillasi, jotta voit käyttää sovellusta.
         </div>
+        <div>
+        Huom! Jos kirjautuminen ei päästä sivulle heti, lataa sivu manuaalisesti uudelleen. 
+        </div>
         <Button primary onClick={signIn}>Kirjaudu sisään</Button>
+        <Footer />
         </div>
 
     );
